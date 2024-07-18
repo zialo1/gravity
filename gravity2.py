@@ -2,6 +2,7 @@ import math
 import pyglet
 import numpy
 from bodies import *
+#comment
             
 class myApp(pyglet.window.Window):
     ''' there are moving masses present '''
