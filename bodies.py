@@ -28,6 +28,7 @@ class massobject:
         self.mymass = mass
         self.locked = False
         self.name=None
+        self.num=0
         
     def link(self,ashape):
         self.shape=ashape
@@ -77,6 +78,10 @@ class bodies:
         for a in alcoords:
             # velocity is zero
             self.allshapes.append(massobject(a,(0,0),mass=1))
+        self.dist=np.zeros((self.max,self.max)
+        self.forces=np.zeros((self.max,self.max))
+        
+                           
         print(f"middle of {self} is {self.middlepoint}")
             
     def append(self,apos,avel,aflag=True):
@@ -146,6 +151,15 @@ class bodies:
     
     def __repr__(self):
         return f"Number of Masselements: {len(self.allshapes)}"
+    
+    #check if this works first.
+    def freezedistances(self):
+        for a in self.cycle():
+            for b in self.cycle():
+                print(a,b)
+                #self.distances[a,b]=metr(a,b)
+                           
+        
             
 def pytest_test0():
     x=bodies()
